@@ -1,13 +1,18 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 html{
-    font: normal 16px / 28px "Roboto Slab",Helvetica,Arial,Verdana,sans-serif;
+    font:  16px/28px "Roboto Slab",Helvetica,Arial,Verdana,sans-serif;
     word-spacing: normal;
     color: #54575c;
 }
 
 body {
-    background-color: aquamarine;
+    /*background-color: rgb(154, 223, 200);*/
     background-size: cover;
     background-position: center;
 }
@@ -16,24 +21,68 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 100px;
-    border-top: 20px solid #333;
-    border-bottom: 20px solid #333;
+    border-top: 40px solid #e9a615;
+    border-bottom: 40px solid #e9a615;
     background-color: #fff;
-    opacity: 0.9;
+    opacity: 0.95;
+    
+
 }
 
 
 .form-group {
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 input, select, textarea {
     width: 100%;
     padding: 8px;
-    font-size: 10px;
+    font-size: 16px;
+}
+
+.btn{
+    font-weight: bold;
+    padding: 10px 10px;
+    cursor: pointer;
+    display: inline-block;
+    display: block;
+    margin-right: auto ;
+    margin-left: auto;
+}
+
+
+
+nav ul {
+    background-color: #f5e8cc;
+    padding: 10px 10px;
+    opacity: 0.95;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+nav ul li {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+nav ul li a {
+    
+    text-decoration: dashed;
+    color: #e9a615;
+    font-weight: bold;
+}
+
+#banner{
+    text-align: center;
+    font-weight: bold;
+    background-color: #e9a615;
+    opacity: 0.95;
 }
