@@ -3,10 +3,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    font-size:  16px/28px
 }
 
 html{
-    font:  16px/28px "Roboto Slab",Helvetica,Arial,Verdana,sans-serif;
     word-spacing: normal;
     color: #54575c;
 }
@@ -84,4 +84,16 @@ nav ul li a {
     font-weight: bold;
     background-color: #e9a615;
     opacity: 0.95;
+}
+
+.titulo{
+    text-align: center;
+    display: inline-block;
+    text-align: left;
+}
+
+header {
+    justify-content: space-between;
+    align-items: center;
+    
 }
