@@ -10,7 +10,7 @@
 
   <style>
     .form-register {
-    width: 400px;
+    width: 500px;
     background: #532b0a;
     padding: 30px;
     margin: auto;
@@ -24,6 +24,7 @@
   .form-register h4 {
     font-size: 22px;
     margin-bottom: 20px;
+    text-align: center;
   }
   
   .controls {
@@ -84,7 +85,7 @@
   var contrasena = document.querySelector('input[name="contrasena"]').value;
 
   if (nombres !== '' && apellidos !== '' && correo !== '' && contrasena !== '') {
-    window.location.href = "Login (Formulario).html";
+    window.location.href = "Login_Formulario.html";
   } else {
     alert("Por favor, complete todos los campos.");
   }
