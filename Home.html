@@ -1,48 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor: " content="Mamuel Alejandro Guayasamin Aviles">
-    <title>Menu Principal</title>
     <link rel="stylesheet" href="CSS/Estilos.css">
+    <title>Menu Principal</title>
+    
     <style>
-        body{
-         background-image: url("Imagenes/fondo.jpg");
-         background-repeat: no-repeat;
-         background-size: cover;
-         background-attachment: fixed;
-        }
-
-        .logo{
-          display: flex;
-          align-items: center;
-        }
-        .logo img{
-          height: 80px;
-        }
-
-  
-        @media(max-width:700px){
-          header{
-            flex-direction: column;
-          }
-        }
-
-        #css {
-          color: yellow;
-          font-family: 'Odibee Sans', cursive;
-        }
-  
         .carousel-wrapper {
-          height: 400px;
+          height: 450px;
           position: relative;
-          width: 800px;
+          width: auto;
           display: block;
-          margin: 50px auto ;
-          border: 2px solid rgb(250, 249, 249);
+          margin: 25px auto ;
         }
-  
         .carousel-item {
           position: absolute;
           top: 0;
@@ -71,7 +44,6 @@
           top: 50%;
           transform: translateY(-50%) rotate(-45deg);
         }
-  
         [id^= "item"] {
           display: none;
         }
@@ -89,49 +61,53 @@
           background: url('Imagenes/Img-3.jpg');
           background-size: cover;
         }
-  
         *:target ~ .item-1{
           opacity: 0;
         }
         #item-1:target ~ .item-1 {
           opacity: 1;
-  
         }
         #item-2:target ~ .item-2, #item-3:target ~ .item-3 {
           z-index: 3;
           opacity: 1;
         } 
-  
-  
-  
       .Img-4{
-        width: 200px;
-        height: 150px;
-        padding: 0 5px;
+        width: 150px;
+        height: 110px;
+        padding: 6px 5px;
         float: right;
+        align-items: center;
       }
-  
       p{
         text-align: center;
-        color: #fff;
-        margin: 6%;
+        margin: 5%;
+
       }
-  
-  
+.btn{
+  display: block;
+  float: right;
+  width: 15%;
+  height: 40px;
+  background: #d17913bd;
+  border-radius: 15px 15px;
+  border-color: #aa7d49bd;
+  color: white;
+  margin-bottom: 16px;
+}
+
+ 
       </style>
-  
     </head>
-  
-  
-  
-  
+
     <body>
       <header>
         <section id="banner">
             <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
             <h1 class="titulo">Restaurante y Comida a Domicilio</h1>
+            <button class="btn" onclick="myFunction()">Acceder</button>
         </section>
         </header>
+
       <nav>
         <ul>
             <li><a href="Home.html">Home</a></li>
@@ -142,50 +118,52 @@
         </ul>
       </nav>
   
-      <header1>
+      <header>
         <div class="carousel-wrapper">
           <span id="item-1"></span>
           <span id="item-2"></span>
           <span id="item-3"></span>
-  
           <div class="carousel-item item-1">
             <a href="#item-3" class="arrow-prev arrow"></a>
             <a href="#item-2" class="arrow-next arrow"></a>
           </div>
-  
           <div class="carousel-item item-2">
             <a href="#item-1" class="arrow-prev arrow"></a>
             <a href="#item-3" class="arrow-next arrow"></a>
           </div>
-  
           <div class="carousel-item item-3">
             <a href="#item-2" class="arrow-prev arrow"></a>
             <a href="#item-1" class="arrow-next arrow"></a>
           </div>
   
         </div>
-      </header1>
+      </header>
   
-  
-      <header2>
+      <header>
         <div class="Container">
-          <p style="color: #3e4044;" class="negocio">
-            <img class="Img-4" src="Imagenes/Img-4.jpg" alt="">
-            <br>Descripcion:</br>
+          <p style="color: black;" class="negocio">
+            <img class="Img-4" src="Imagenes/Img-4.jpg" alt="Comida">
+            <br>
+              Descripcion:
+            <br>
             Un lugar diseñado especialmente para tí y tus ganas de pasarlo bien. Ven con tus amigos 
             y disfruta del mejor ambiente, conviértete en el protagonista 
             de la noche en nuestro karaoke o simplemente disfruta de nuestras deliciosas picadas. 
             Anímate, que nunca sabes lo que la noche te tiene preparado.</p>
           
           </div>
-  
-        </div>
-      </header2>
+      </header>
   
       <footer>
         <h3>Dirección de contacto</h3>
         <h3>Derechos reservados 2023 - Tarea 1 - Grupo #11</h3>
      </footer>
   
+     <script>
+      function myFunction() {
+        window.location.href = "Login_Formulario.html";
+      }
+    </script>
+
     </body>
   </html>
