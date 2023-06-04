@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Jair Monserrate: " content="JM">
+    <title>Formulario de comida</title>
+    <link rel="stylesheet" href="CSS/Estilos.css">
+    <style>
+      body {
+        background-image: url("Imagenes/fondo.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      .btnPrimaryForm {
+        border: 1px solid rgb(131, 129, 129);
+        border-radius: 15%;
+        background-color: rgb(248, 182, 39);
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        display: inline-flex;
+        margin: 8px;
+      }
+      .btnPrimaryForm:hover {
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div id="banner">
+        <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
+        <h1 class="titulo">Restaurante y Comida a Domicilio</h1>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Menu.html">Menú</a></li>
+        <li><a href="Categoria.html">Categorias</a></li>
+        <li><a href="DireccionPedido.html">Pedido</a></li>
+
+        <li><a href="Reseña.html">Reseña</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <h1 style="text-align: center">Formulario de Datos Domicilio:</h1>
+      <form>
+        <div class="formGroup">
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="formGroup">
+          <label id="ciudad">Ciudad:</label>
+          <input
+            class="formControl"
+            list="listaOpciones"
+            placeholder="Escriba su zona..."
+          >
+          <datalist id="listaOpciones">
+            <option value="Norte"></option>
+            <option value="Centro"></option>
+            <option value="Sur"></option>
+            <option value="Oeste"></option>
+            <option value="Este"></option>
+            <option value="Suburbio"></option>
+          </datalist>
+        </div>
+        <div class="formGroup">
+          <label for="direccion">Direccion de calle:</label>
+          <input type="text" id="direccion" name="direccion" required>
+        </div>
+        <div class="formGroup">
+          <label for="referencia">Referencias:</label>
+          <textarea
+            id="referencia"
+            name="referencia"
+            rows="2"
+            cols="50"
+            placeholder="Diagonal A frente a B..."
+          ></textarea>
+        </div>
+
+        <div class="formGroup">
+          <label for="codPostal">Codigo Postal:</label>
+          <input
+            type="text"
+            id="codPostal"
+            placeholder="example: 090102"
+            name="codPostal"
+            required
+          >
+        </div>
+        <div class="formGroup">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" required>
+        </div>
+
+        <input class="btn" type="submit" value="Guardar">
+        <div class="formGroup">
+          <a class="btnPrimaryForm" role="button" aria-disabled="true">1</a>
+          <a class="btnPrimaryForm" href="TarjetaPedido.html">2</a>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <h3>Dirección de contacto</h3>
+      <p>Derechos reservados 2023 - Tarea 1 - Grupo #11</p>
+    </footer>
+  </body>
+</html>
