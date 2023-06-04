@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Jair M." content="Jair Monserrate" />
+    <title>Formulario de comida</title>
+    <link rel="stylesheet" href="CSS/Estilos.css" />
+    <style>
+      body {
+        background-image: url("Imagenes/fondo.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .formCheck.formCheckInline {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .formCheck.formCheckInline .formCheckLabel {
+        margin-left: 2px ;
+        margin-right: 12px;
+        margin-block: 14px;
+      }
+
+      .btnPrimaryForm {
+        border: 1px solid rgb(131, 129, 129);
+        border-radius: 15% ;
+        background-color: rgb(248, 182, 39);
+        padding: 10px;
+        
+        text-decoration: none;
+        color: black;
+        display: inline-block;
+        margin: 8px;
+        
+      }
+      .btnPrimaryForm:hover {
+        color: white;
+    } 
+    .inputGroup {
+      width: 100px;
+    }
+  
+    .inputGroupLabel {
+      margin-right: 10px;
+      
+    }
+  
+    .formControl {
+      width: 400px;
+      
+    }
+  
+    .inputGroupText {
+      background-color: lightgray;
+      color: black;
+      cursor: pointer;
+    }
+      
+
+    </style>
+  </head>
+
+<body>
+<header>
+    <div id="banner">
+        <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante" />
+        <h1 class="titulo">Restaurante y Comida a Domicilio</h1>
+    </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Menu.html">Menú</a></li>
+        <li><a href="Categoria.html">Categorias</a></li>
+        <li><a href="DireccionPedido.html">Pedido Datos</a></li>
+        <li><a href="Reseña.html">Reseña</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <h1 style="text-align: center">Formulario Datos de Tarjeta:</h1>
+      <form>
+        <div class="formGroup">
+          <label for="tarjeta">Tarjeta de Crédito:</label>
+          <input
+            type="text"
+            id="tarjeta"
+            name="tarjeta"
+            pattern="[0-9]{16}"
+            required
+            placeholder="Ingrese el número de tarjeta (16 dígitos)"
+          />
+        </div>
+        <div class="formGroup">
+        <div class="inputGroupmb-3">
+          <label id="fotoTarjeta">Foto-Tarjeta (archivo de extension .pdf .jpg):</label>
+          <input type="file" class="form-control" id="inputGroupFile02">
+        </div>
+        </div>
+        <div class="formGroup">
+          <label id="tipo-tarjeta">Seleccione el tipo de tarjeta:</label>
+          <div class="formCheck formCheckInline">
+            <input class="formCheckInput" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="formCheckLabel" for="inlineCheckbox1">Xperta</label>
+          </div>
+          <div class="formCheck formCheckInline">
+            <input class="formCheckInput" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="formCheckLabel" for="inlineCheckbox2">Master Card</label>
+          </div>
+          <div class="formCheck formCheckInline">
+            <input class="formCheckInput" type="checkbox" id="inlineCheckbox3" value="option2">
+            <label class="formCheckLabel" for="inlineCheckbox3">Visa</label>
+          </div>
+          <div class="formCheck formCheckInline">
+            <input class="formCheckInput" type="checkbox" id="inlineCheckbox4" value="option2">
+            <label class="formCheckLabel" for="inlineCheckbox3">Paypal</label>
+          </div>
+          <div class="formCheck formCheckInline">
+            <input class="formCheckInput" type="checkbox" id="inlineCheckbox5" value="option2">
+            <label class="formCheckLabel" for="inlineCheckbox3">Pacificard</label>
+          </div>
+          <div class="formCheck formCheckInline">
+            <input class="formCheckInput" type="checkbox" id="inlineCheckbox6" value="option2">
+            <label class="formCheckLabel" for="inlineCheckbox3">Discover</label>
+          </div>
+          <div class="formCheck formCheckInline">
+            <input class="formCheckInput" type="checkbox" id="inlineCheckbox7" value="option2">
+            <label class="formCheckLabel" for="inlineCheckbox3">Maestro</label>
+          </div>
+          <div class="formCheck formCheckInline">
+            <input class="formCheckInput" type="checkbox" id="inlineCheckbox8" value="option2">
+            <label class="formCheckLabel" for="inlineCheckbox3">Ahorros</label>
+          </div>
+
+        </div>
+
+        <div class="formGroup">
+          <label for="vencimiento">Fecha de Vencimiento:</label>
+          <input type="month" id="vencimiento" name="vencimiento" required />
+        </div>
+
+        <div class="formGroup">
+          <label for="cvv">CVV:</label>
+          <input
+            type="text"
+            id="cvv"
+            name="cvv"
+            pattern="[0-9]{3}"
+            required
+            placeholder="Ingrese el CVV (3 dígitos)"
+          />
+        </div>
+        <div class="formGroup">
+          <label id="correoE">Email address:</label>
+          <input type="email" id="CorreoE" placeholder="name@example.com" name=" correoE" required />
+        </div> 
+        
+        <input class="btn" type="submit" value="Guardar" />
+        <div class="formGroup">
+          <a class="btnPrimaryForm" role="button" href="DireccionPedido.html">1</a>
+          <a class="btnPrimaryForm" aria-disabled="true">2</a>
+          </div>
+      </form>
+    </div>
+    <footer>
+      <h3>Dirección de contacto</h3>
+      <p>Derechos reservados 2023 - Tarea 1 - Grupo #11</p>
+    </footer>
+  </body>
+</html>
