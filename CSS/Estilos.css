@@ -20,18 +20,6 @@ html{
     word-spacing: normal;
     color: #3e4044;
 }
-.container {
-    position: relative;
-    margin: auto;
-    max-width: 500px;
-    padding: 50px;
-    border-top: 40px solid #e9a615;
-    border-bottom: 40px solid #e9a615;
-    background-color: #fff;
-    opacity: 0.98;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
 .formGroup {
     margin-bottom: 10px;
 }
