@@ -176,12 +176,15 @@ footer {
     padding-left: 10px;
     padding-right: 10px;
     background-color: #fff;
-    opacity: 0.98;
+    opacity: 0.99;
     padding-top: 10px;
     padding-bottom: 10px;
     border-style: dotted;
 }
 #categorias{
+    background-color: white;
+    opacity: 0.98;
+    align-items: center;
     border-top:20px solid #e9a615;
     border-bottom:20px solid #e9a615;
 }
