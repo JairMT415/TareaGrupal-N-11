@@ -8,14 +8,32 @@
     <title>Foodie place</title>
     <link rel="stylesheet" href="CSS/Estilos.css">
     <style>
-        .Titulo{
-            color: #000000;
-            text-align: center;
-        }
+        
         h4{
             color: #12a50d;
         }
-     
+/*Maquetación Grid Layout: (display: grid)*/
+        .itemb {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 10px;
+            justify-items: center;
+        }
+        .itemc {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 10px;
+            justify-items: center;
+        }
+
+/*Maquetación Flexbox: (display:flex)*/
+        .Platillos{
+            display: flex;
+            color: #000000;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
@@ -30,76 +48,76 @@
             <li><a href="Home.html">Home</a></li>
             <li><a href="Menu.html">Menú</a></li>
             <li><a href="Categoria.html">Categorias</a></li>
-            <li><a href="Pedido.html">Pedidos</a></li>
+            <li><a href="Pedidos.html">Pedidos</a></li>
             <li><a href="Reseña.html">Reseñas</a></li>
         </ul>
       </nav>
-    <section class="Titulo">
+    <section class="Platillos">
         <h1 style="background-color: rgb(242, 245, 248); opacity: 0.97;">Foodie place</h1>
     </section>
     <section class="items">
         
-        <div class="item">
+        <div class="itemb">
             <img src="Imagenes/Agua.jpg" alt="Agua">
             <h4>Agua</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemc">
             <img src="Imagenes/Arroz_con_menestra.jpg" alt="Arroz con menestra">
             <h4>Arroz con menestra</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemc">
             <img src="Imagenes/Arroz_con_pescado.jpg" alt="Arroz con pescado">
             <h4>Arroz con pescado</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemc">
             <img src="Imagenes/Cebiche_marinero.jpg" alt="Cebiche marinero">
             <h4>Ceviche marinero</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemb">
             <img src="Imagenes/Cerveza.jpg" alt="Cerveza">
             <h4>Cerveza</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemb">
             <img src="Imagenes/Cola_personal.jpg" alt="Cola personal">
             <h4>Cola personal</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemb">
             <img src="Imagenes/Colas.jpg" alt="Colas">
             <h4>Cola Familiar</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemc">
             <img src="Imagenes/Encebollado.jpg" alt="Encebollado">
             <h4>Encebollado</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemc">
             <img src="Imagenes/Encocado_de_camarones.jpg" alt="Encocado de camarones">
             <h4>Encocado de camarones</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemc">
             <img src="Imagenes/Guatita.jpg" alt="Guatita">
             <h4>Guatita</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemc">
             <img src="Imagenes/Pancakes.jpg" alt="Pancakes">
             <h4>Pancakes</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemc">
             <img src="Imagenes/pollo.jfif" alt="Pollo">
             <h4>Arroz con pollo</h4>
             <button>Orden</button>
         </div>
-        <div class="item">
+        <div class="itemb">
             <img src="Imagenes/Jugos.jpg" alt="Jugos">
             <h4>Jugos</h4>
             <button>Orden</button>
@@ -108,7 +126,8 @@
     </section>
         <footer>
             <h3>Dirección de contacto</h3>
-            <h3>Derechos reservados 2023 - Tarea 2 - Grupo #11</h3>
+            <h3>Derechos reservados 2023 - Tarea 1 - Grupo #11</h3>
          </footer>
     </body>
 </html>
+
