@@ -1,91 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor: " content="Mamuel Alejandro Guayasamin Aviles">
     <link rel="stylesheet" href="CSS/Estilos.css">
-  <title>Formulario Registro</title>
+    <title>Formulario Registro</title>
 
-  <style>
-    .form-register h4 {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-    .form-register a {
-      color: white;
-      text-decoration: none;
-    }
-    .form-register a:hover {
-      color: white;
-      text-decoration: underline;
-    }
-    .form-register .botons {
-      width: 100%;
-      background: #d17913bd;
-      border: none;
-      padding: 12px;
-      color: white;
-    }
+    <style>
+      .form-register h4 {
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+      .form-register a {
+        color: white;
+        text-decoration: none;
+      }
+      .form-register a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      .form-register .botons {
+        width: 100%;
+        background: #d17913bd;
+        border: none;
+        padding: 12px;
+        color: white;
+      }
 /*Maquetación Grid Layout: (display: grid)*/
-  .form-register {
-      display: grid;
-      width: 500px;
-      background: #532b0a;
-      padding: 30px;
-      margin: auto;
-      margin-top: 100px;
-      border-radius: 4px;
-      font-family: 'calibri';
-      color: white;
-      box-shadow: 7px 13px 37px #000;
-    }
-    .controls {
-      display: block;
-      width: 100%;
-      background: #252323;
-      padding: 10px;
-      border-radius: 4px;
-      margin-bottom: 16px;
-      border: 1px solid #e09c35;
-      font-family: 'calibri';
-      font-size: 18px;
-      color: white;
-    }
-    .form-register p {
-      display: block;
-      height: 40px;
-      text-align: center;
-      font-size: 18px;
-      line-height: 40px;
-    }
-  </style>
-</head>
-<body>
-  <section class="form-register">
-    <h4>Formulario Registro</h4>
-    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
-    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
-    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
-    <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="Ingrese su Contraseña">
-    <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-    <input class="botons" type="submit" value="Registrar" onclick="abrirPagina()">
-    <p><a href="Login_Formulario.html">¿Ya tengo Cuenta?</a></p>
-  </section>
-  <script>
-    function abrirPagina() {
-  var usuario = document.querySelector('input[name="nombres"]').value;
-  var contrasena = document.querySelector('input[name="apellidos"]').value;
-  var usuario = document.querySelector('input[name="correo"]').value;
-  var contrasena = document.querySelector('input[name="contrasena"]').value;
+    .form-register {
+        display: grid;
+        width: 500px;
+        background: #532b0a;
+        padding: 30px;
+        margin: auto;
+        margin-top: 100px;
+        border-radius: 4px;
+        font-family: 'calibri';
+        color: white;
+        box-shadow: 7px 13px 37px #000;
+      }
+/* Maquetación Inline-block Layout (display: inline, display: block, display:inline-block)*/
+      .controls {
+        display: block;
+        width: 100%;
+        background: #252323;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 16px;
+        border: 1px solid #e09c35;
+        font-family: 'calibri';
+        font-size: 18px;
+        color: white;
+      }
+      .form-register p {
+        display: block;
+        height: 40px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 40px;
+      }
+    </style>
+  </head>
 
-  if (nombres !== '' && apellidos !== '' && correo !== '' && contrasena !== '') {
-    window.location.href = "Login_Formulario.html";
-  } else {
-    alert("Por favor, complete todos los campos.");
-  }
-}
-  </script>
-</body>
+  <body>
+    <section class="form-register">
+      <h4>Formulario Registro</h4>
+      <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+      <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+      <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+      <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="Ingrese su Contraseña">
+      <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+      <input class="botons" type="submit" value="Registrar" onclick="abrirPagina()">
+      <p><a href="Login_Formulario.html">¿Ya tengo Cuenta?</a></p>
+    </section>
+
+    <script>
+      function abrirPagina() {
+        var usuario = document.querySelector('input[name="nombres"]').value;
+        var contrasena = document.querySelector('input[name="apellidos"]').value;
+        var usuario = document.querySelector('input[name="correo"]').value;
+        var contrasena = document.querySelector('input[name="contrasena"]').value;
+
+        if (nombres !== '' && apellidos !== '' && correo !== '' && contrasena !== '') {
+          window.location.href = "Login_Formulario.html";
+        } else {
+          alert("Por favor, complete todos los campos.");
+        }
+      }
+    </script>
+  </body>
 </html>
