@@ -5,22 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor: " content="">
-    <title>Foodie place</title>
     <link rel="stylesheet" href="CSS/Estilos.css">
+    <title>Menu</title>
+    
     <style>
         h4{
             color: #12a50d;
             justify-content: center;
         }
-
 /*Maquetación Grid Layout: (display: grid)*/
         .items {
             display: grid;
             grid-gap: 10px;
             justify-items: center;
         }
-
-
 /*Maquetación Flexbox: (display:flex)*/
         .Platillos{
             display: flex;
@@ -29,13 +27,14 @@
             justify-content: center;
         }
     </style>
+    
 </head>
 <body>
     <header>
-        <div id="banner">
+        <section id="banner">
             <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
-            <h1 class="titulo">Restaurante y Comida a Domicilio</h1>
-        </div>
+            <h2 class="titulo">Restaurante y Comida a Domicilio</h2>
+        </section>
         </header>
       <nav>
         <ul>
@@ -43,12 +42,14 @@
             <li><a href="Menu.html">Menú</a></li>
             <li><a href="Categoria.html">Categorias</a></li>
             <li><a href="Pedidos.html">Pedidos</a></li>
-            <li><a href="Reseña.html">Reseñas</a></li>
+            <li></li>
         </ul>
       </nav>
-    <section class="Platillos">
-        <h1 style="background-color: rgb(242, 245, 248); opacity: 0.97;">Foodie place</h1>
-    </section>
+      
+    <div>
+        <h1 style="background-color: rgb(242, 245, 248); text-align: center;">Platillos disponibles</h1>
+        <h1 style="background-color: rgb(242, 245, 248);"><a href="Puntuación.html">Califica tu platillo</a></h1>
+    </div>
     <section class="items">
         
         <div class="itemb">
@@ -124,4 +125,3 @@
          </footer>
     </body>
 </html>
-
