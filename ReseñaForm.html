@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <title>Reseñas</title>
+    <link rel="stylesheet" href="CSS/Estilos.css">
+    <style>
+
+.container {
+      position: relative;
+      margin: auto;
+      max-width: 500px;
+      padding: 50px;
+      border-top: 40px solid #e9a615;
+      border-bottom: 40px solid #e9a615;
+      background-color: #fff;
+      opacity: 0.98;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      }
+      .reseña {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px;
+  background-color: rgb(255, 181, 112);
+}
+
+.reseña h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.reseña p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+      
+      button{
+        color: white;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: rgb(0, 0, 0);
+      }
+
+      .input-reseña{
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="banner">
+          <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
+          <h2 class="titulo">Restaurante y Comida a Domicilio</h2>
+      </div>
+      </header>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Menu.html">Menú</a></li>
+        <li><a href="Categoria.html">Categorias</a></li>
+        <li><a href="Pedido.html">Pedidos</a></li>
+        <li><a href="Reseña.html">Reseñas</a></li>
+      </ul>
+    </nav>
+    
+    <div class="container">
+      <form>
+        <h1 style="text-align: center">Deja tu reseña:</h1>
+        <h4>Nombre</h4>
+        <input class="input-reseña" type="text" placeholder="Juan Jose Campos">
+        <h4>Reseña</h4>
+        <textarea class="input-reseña" name="area-reseña" id="" cols="30" rows="5" placeholder="Me gusto mucho la comida..."></textarea>
+        <label for="customRange2" class="formLabel">Calificacion (0-5)</label>
+        <input type="range" class="formRange" min="0" max="5" id="customRange2">
+        <button onsubmit="">Enviar</button>
+      </form>
+    </div>
+    
+    <footer>
+      <h3>Dirección de contacto</h3>
+      <h3>Derechos reservados 2023 - Tarea 1 - Grupo #11</h3>
+   </footer>
+  </body>
+</html>
