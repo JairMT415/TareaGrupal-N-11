@@ -10,6 +10,7 @@
 
     <style>
       .form-register h4 {
+        text-align: center;
         font-size: 22px;
         margin-bottom: 20px;
       }
@@ -21,7 +22,7 @@
         color: white;
         text-decoration: underline;
       }
-      .form-register .botons {
+      .form-register .buttons {
         width: 100%;
         background: #d17913bd;
         border: none;
@@ -32,14 +33,14 @@
     .form-register {
         display: grid;
         width: 500px;
+        height: auto;
         background: #532b0a;
         padding: 30px;
         margin: auto;
-        margin-top: 100px;
+        margin-top: 50px;
         border-radius: 4px;
-        font-family: 'calibri';
+        padding: 30px 20px;
         color: white;
-        box-shadow: 7px 13px 37px #000;
       }
 /* Maquetación Inline-block Layout (display: inline, display: block, display:inline-block)*/
       .controls {
@@ -65,30 +66,106 @@
   </head>
 
   <body>
-    <section class="form-register">
-      <h4>Formulario Registro</h4>
-      <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
-      <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
-      <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
-      <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="Ingrese su Contraseña">
-      <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-      <input class="botons" type="submit" value="Registrar" onclick="abrirPagina()">
-      <p><a href="Login_Formulario.html">¿Ya tengo Cuenta?</a></p>
-    </section>
+    <div class="form-register">
+      <form id="form">
+        <h4>Formulario Registro</h4>
+        <div>
+          <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+        </div>
+        <div>
+          <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+        </div>
+        <div>
+          <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+        </div>
+        <div>
+          <input class="controls" type="password" name="contrasena" id="contraseña" placeholder="Ingrese su Contraseña">
+        </div>
+        <div>
+          <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+        </div>
+        <div>
+          <input class="buttons" type="submit" value="Registrar" >
+        </div>
+        <div>
+          <p><a href="Login_Formulario.html">¿Ya tengo Cuenta?</a></p>
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+      var form = document.querySelector("#form"); // selecciona el primero que cumple con el selector
+      form.addEventListener('submit', validarFormulario);
 
-    <script>
-      function abrirPagina() {
-        var usuario = document.querySelector('input[name="nombres"]').value;
-        var contrasena = document.querySelector('input[name="apellidos"]').value;
-        var usuario = document.querySelector('input[name="correo"]').value;
-        var contrasena = document.querySelector('input[name="contrasena"]').value;
+      function validarFormulario(event) {
+          event.preventDefault(); // Evita que el formulario se envíe y recargue la página
 
-        if (nombres !== '' && apellidos !== '' && correo !== '' && contrasena !== '') {
-          window.location.href = "Login_Formulario.html";
-        } else {
-          alert("Por favor, complete todos los campos.");
+          //Validacion de la caja de texto
+          var valido = true;
+          var letra = /^[a-z ,.'-]+$/i;
+          var correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+          var txtNombres = document.getElementById("nombres");
+          var txtApellidos = document.getElementById("apellidos");
+          var txtCorreo = document.getElementById("correo");
+          var txtContraseña = document.getElementById("contraseña");
+
+          limpiarMensajes();
+
+          //Validacion para nombres
+          if (txtNombres.value === '') {
+              valido = false;
+              mensaje("El campo de usuario es requerido",txtNombres);
+          } else if (txtNombres.value.length > 20) {
+              valido = false;
+              mensaje("Ingrese un máximo de 20 caracteres para el campo de usuario",txtNombres);
+          } else if (!letra.test(txtNombres.value)) { 
+              valido = false;
+              mensaje("Nombre solo debe contener letras", txtNombres);
+          }
+          //Validacion para apellidos 
+          if (txtApellidos.value === '') {
+              valido = false;
+              mensaje("El campo de usuario es requerido",txtApellidos);
+          } else if (txtApellidos.value.length > 20) {
+              valido = false;
+              mensaje("Ingrese un máximo de 20 caracteres para el campo de usuario",txtUsuario);
+          } else if (!letra.test(txtApellidos.value)) { 
+              valido = false;
+              mensaje("Nombre solo debe contener letras", txtApellidos);
+          }
+          //validacion para el correo
+          if (txtCorreo.value === "") {
+                  valido = false;
+                  mensaje("Email es requerido", txtCorreo);
+              } else if (!correo.test(txtCorreo.value)) {
+                  valido = false;
+                  mensaje("Email no es correcto", txtCorreo);
+              }
+          //Validacion Contraseña
+          if (txtContraseña.value === '') {
+              valido = false;
+              mensaje("El campo de contraseña es requerido",txtContraseña);
+          } else if (txtContraseña.value.length < 8 || txtContraseña.value.length > 20) {
+              valido = false;
+              mensaje("La contraseña debe tener entre 8 y 20 caracteres",txtContraseña);
+          }
+          if (valido) {
+              window.location.href = "Login_Formulario.html";
+          }
         }
-      }
+        function mensaje(cadenaMensaje, elemento) {
+          elemento.focus();
+          var nodoPadre = elemento.parentNode;
+          var nodoMensaje = document.createElement("span");
+          nodoMensaje.textContent = cadenaMensaje;
+          nodoMensaje.setAttribute("class", "mensajeError");
+          nodoPadre.appendChild(nodoMensaje);
+        }
+        function limpiarMensajes() {
+            var mensajes = document.querySelectorAll(".mensajeError");
+            for (let i = 0; i < mensajes.length; i++) {
+                mensajes[i].remove();// remueve o elimina un elemento de mi doc html
+            }
+          }
     </script>
   </body>
 </html>
