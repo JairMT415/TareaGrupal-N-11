@@ -194,6 +194,14 @@ footer {
 .reseña{
     text-align: justify;
 }
+
+li a::after {
+    content: "  |";
+    }
+li a::before {
+    content: "|  ";
+    }
+    
 .mensajeError{
     color:rgb(255, 0, 0);
     font-size: 14px;
