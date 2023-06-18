@@ -8,112 +8,59 @@
     <title>Menu Principal</title>
     
     <style>
-      .carousel-item {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 25px 50px;
-        opacity: 0;
-        transition: all 0.5s ease-in-out;
-      }
-      .arrow{
-        border: solid black;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 12px;
-      }
-      .arrow-prev {
-        left: 30px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%) rotate(135deg); 
-      }
-      .arrow-next {
-        right: 30px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%) rotate(-45deg);
-      }
-      [id^= "item"] {
-        display: none;
-      }
-      .item-1 {
-        z-index: 2;
-        opacity: 1;
-        background: url('Imagenes/Img-1.jpg');
-        background-size: cover;
-      }
-      .item-2 {
-        background: url('Imagenes/Img-2.jpg');
-        background-size: cover;
-      }
-      .item-3 {
-        background: url('Imagenes/Img-3.jpg');
-        background-size: cover;
-      }
-      *:target ~ .item-1{
-        opacity: 0;
-      }
-      #item-1:target ~ .item-1 {
-        opacity: 1;
-      }
-      #item-2:target ~ .item-2, #item-3:target ~ .item-3 {
-        z-index: 3;
-        opacity: 1;
-      } 
-      p{
-        text-align: center;
-        margin: 5px;
-      }
       /*Maquetación Flexbox: (display:flex)*/
-      .carousel-wrapper {
+      #item {
         display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
-        height: 450px;
-        position: relative;
-        width: auto;
-        display: block;
-        margin: 25px auto ;
+        align-items: stretch;
+        gap: 10px 30px;
+        height: 200px;
       }
-      .Container {
+      #Container {
         display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
+        gap: 10px 30px;
+        height: 330px;
         position: relative;
         margin: auto;
-        max-width: 800px;
-        padding: 50px;
-        border-top: 40px solid #e9a615;
-        border-bottom: 40px solid #e9a615;
-        background-color: #fff;
-        opacity: 0.98;
+        max-width: max-content;
+        border-bottom: 30px solid #e9a615;
+        border-top: 30px solid #e9a615;
         margin-top: 25px;
         margin-bottom: 25px;
-      }
-      .container p {
-        display: flex;
-        margin: 0;
+        background-color: white;
       }
       /*Maquetación Flotamiento (float: left, float: right)*/
-      .Img-4{
+      #imagen4{
         float: right;
         width: 200px;
         height: 180px;
         padding: 10px 10px;
       }
-      .btn{
+      #btn{
         text-decoration: none;
         float: right;
-        width: 12%;
-        height: max-content;
+        width: 100px;
+        height: 30px;
         background: #d17913bd;
         border-radius: 10px 10px;
-        border-color: #0e0d0dbd;
-        color: white;
         margin-bottom: 10px;
+      }
+      /* Otros Estilos */
+      p{
+        text-align: center;
+        margin: 5px;
+      }
+      .imagen{
+        align-items: center;
+        width: 185px;
+        height: 185px;
+        padding: 20px 5px;
       }
     </style>
   </head>
@@ -122,8 +69,8 @@
       <header>
         <div id="banner">
             <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
-            <h1 class="titulo">Restaurante y Comida a Domicilio</h1>
-            <button class="btn"><a href="Login_Formulario.html" style="text-decoration: none;">Acceder</a></button>
+            <h2 class="titulo">Restaurante y Comida a Domicilio</h2>
+            <button id="btn"><a href="Login_Formulario.html" style="text-decoration: none;">Acceder</a></button>
         </div>
         </header>
 
@@ -136,42 +83,76 @@
           <li><a href="Reseña.html">Reseñas</a></li>
         </ul>
       </nav>
-  
-      <div class="carousel-wrapper">
-        <span id="item-1"></span>
-        <span id="item-2"></span>
-        <span id="item-3"></span>
-        <div class="carousel-item item-1">
-          <a href="#item-3" class="arrow-prev arrow"></a>
-          <a href="#item-2" class="arrow-next arrow"></a>
-        </div>
-        <div class="carousel-item item-2">
-          <a href="#item-1" class="arrow-prev arrow"></a>
-          <a href="#item-3" class="arrow-next arrow"></a>
-        </div>
-        <div class="carousel-item item-3">
-          <a href="#item-2" class="arrow-prev arrow"></a>
-          <a href="#item-1" class="arrow-next arrow"></a>
-        </div>
+      <div id="item" style="text-align: center;">
+          <img class="imagen" id="uno" ondblclick="cambiarPestania(this)" src="Imagenes/Img-1.jpg" alt="Comida">
+          <img class="imagen" id="dos" ondblclick="cambiarPestania(this)" src="Imagenes/Img-2.jpg" alt="Comida">
+          <img class="imagen" id="tres" ondblclick="cambiarPestania(this)" src="Imagenes/Img-3.jpg" alt="Comida">
       </div>
-  
-      <div class="Container">
+      <div id="contenido">
+
+      </div>
+      <div id="Container">
         <p style="color: black;" class="negocio">
-          <img class="Img-4" src="Imagenes/Img-4.jpg" alt="Comida">
+
+            <img id="imagen4" src="Imagenes/Img-4.jpg" alt="Comida">
           <br>
-           Descripcion:
+            Descripcion:
           <br>
-          Un lugar diseñado especialmente para tí y tus ganas de pasarlo bien. Ven con tus amigos 
-          y disfruta del mejor ambiente, conviértete en el protagonista 
-          de la noche en nuestro karaoke o simplemente disfruta de nuestras deliciosas picadas. 
-          Anímate, que nunca sabes lo que la noche te tiene preparado.
+            Un lugar diseñado especialmente para tí y tus ganas de pasarlo bien. Ven con tus amigos 
+            y disfruta del mejor ambiente, conviértete en el protagonista 
+            de la noche en nuestro karaoke o simplemente disfruta de nuestras deliciosas picadas. 
+            Anímate, que nunca sabes lo que la noche te tiene preparado.
         </p>          
       </div>
   
       <footer>
         <h3>Dirección de contacto</h3>
         <h3>Derechos reservados 2023 - Tarea 2 - Grupo #11</h3>
-     </footer>
+      </footer>
 
+      <script type="text/javascript">
+        // limpiar las clases de todos los enlaces
+        var enlaces = document.querySelectorAll("#item img");// retorna un arreglo con todos los elementos
+        // que cumplen con el selector
+        for (let i = 0; i < enlaces.length; i++) {
+          enlaces[i].addEventListener('click', ()=>cambiarPestania(enlaces[i]));
+        }
+        function cambiarPestania(nodoA) {
+          // obtener los elementos a manipular
+          let div = document.querySelector("#contenido");// retorna el primer elemento que cumple con
+          // el selector
+          let contenido = '';
+          // obtener atributo
+          if (nodoA.classList.contains("seleccionado")) {
+            contenido = ''; // Vaciar el contenido
+            nodoA.classList.remove("seleccionado"); // Remover la clase "seleccionado"
+          } else {
+            switch (nodoA.id) {
+              case "uno":
+                  contenido = "Déjate llevar por la diversión y visita nuestras instalaciones, el mejor sonido e iluminación para crear un ambiente relajado donde encontrarás comodidad, y un espacio privado de Karaoke, canta, baila y demuestra tu habilidad con tus amigos.";
+                  break;
+              case "dos":
+                  contenido = "Date un gusto con nuestra variedad de picaditas. Escoge la que más te guste y acompáñala con tu bebida favorita.";
+                  break;
+              case "tres":
+                  contenido = "Nos complace informarte que ahora ofrecemos un servicio a domicilio para que puedas disfrutar de nuestra deliciosa comida en la comodidad de tu hogar. Sabemos que hay momentos en los que preferirías quedarte en casa y relajarte, por eso nos encargaremos de llevarte una experiencia culinaria excepcional directamente a tu puerta.";
+                  break;
+              default:
+                  break;
+            }
+              nodoA.classList.add("seleccionado");
+          }
+          // modificacion del elemento
+          div.textContent = contenido;
+          // limpiar las clases de todos los enlaces
+          let enlaces = document.querySelectorAll("#item img");// retorna un arreglo con todos los elementos
+          // que cumplen con el selector
+          for (let i = 0; i < enlaces.length; i++) {
+              enlaces[i].classList.remove("seleccionado");
+              enlaces[i].classList.add("normal");
+          }
+          nodoA.classList.add("seleccionado");
+        } 
+      </script>
     </body>
 </html>
