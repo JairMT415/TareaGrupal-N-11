@@ -38,15 +38,15 @@ function validarFormTarjeta(event) {
         mensaje("Debe seleccionar un tipo de tarjeta", selectTipoTarjeta);
     }
 
-    // Obtener el año actual
-    var fechaVencimiento = new Date(txtFechaVenc.value);
-    var anioVencimiento = fechaVencimiento.getFullYear();
+    / Validacion de fecha de vencimiento
+    var fechaVenc = new Date(txtFechaVenc.value);
+    var anioVenc= fechaVenc.getFullYear();
     var anioActual = new Date().getFullYear();
 
     if (txtFechaVenc.value === "") {
         resultado = false;
         mensaje("Fecha es requerida", txtFechaVenc);
-    }else if (anioVencimiento < anioActual) {
+    }else if (anioVenc < anioActual) {
         resultado = false;
         mensaje("La tarjeta está vencida", txtFechaVenc);
     }
