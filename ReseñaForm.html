@@ -58,59 +58,6 @@
         margin-bottom: 25px;
       }
     </style>
-    <!-- <script type="text/javascript">
-      function verificarCampos() {
-        var verificado;
-        var msg = "";
-
-        if (verificarTextArea()) {
-          verificado = true;
-        } else {
-          verificado = false;
-          msg = "Text Area Vacio!!";
-        }
-
-        if (verificado == true) {
-          alert("verificado");
-        } else {
-          return msg;
-          alert("No verificado");
-        }
-      }
-
-      function submit() {
-        var submitbtn = document.querySelector("#btn-submit");
-        submitbtn.addEventListener("submit", enviar);
-      }
-
-      function enviar(event) {
-        event.preventDefault();
-        var noverifStr = verificarCampos();
-
-        if (typeof noverifStr == "string") {
-          var span = document.getElementById("span-area-vacia");
-          span.style.display = "inline";
-          span.style.color = "red";
-          span.textContent = "Debe llenar el campo con una opinion!!";
-        }
-        if (typeof noverifStr == "undefined") {
-          alert("Enviado!!");
-        }
-        //console.log('enviado!!');
-        //event.preventDefault
-      }
-
-      function verificarTextArea() {
-        var area = document.getElementById("campo-area");
-        var value = area.value;
-        console.log(value.length);
-        if (value < 1) {
-          return false;
-        } else {
-          return true;
-        }
-      }
-    </script> -->
   </head>
   <body>
     <header>
@@ -175,6 +122,7 @@
           Merienda
         </label>
         <span id="span-radios-check" style="display: none"></span>
+        </br>
         <button id="btn-submit">Enviar</button>
       </form>
     </div>
@@ -214,24 +162,19 @@
           msg = "Text Area Vacio!!";
         }
 
-        if (verificado == true) {
-          alert("verificado");
-        } else {
-          return msg;
-          alert("No verificado");
+        if (verificado !== true) {
+          return msg
         }
       }
 
-      // function submit() {
-      //   var submitbtn = document.querySelector("#btn-submit");
-      //   submitbtn.addEventListener("submit", enviar());
-      // }
+      //devuelve array de radios seleccionados
       function checkRadios() {
         var radios = document.querySelectorAll('input[name="jornada"]:checked');
         console.log(radios);
         return radios;
       }
 
+      //evento para enviar formulario
       function enviar(event) {
         event.preventDefault();
         var noverifStr = verificarCampos();
@@ -242,39 +185,44 @@
           span.style.display = "inline";
           span.style.color = "red";
           span.textContent = "Debe llenar el campo con una opinion!!";
-        }else{
+        } else {
           span.style.display = "none";
         }
-        if (typeof noverifStr == "undefined") {
-          alert("Enviado!!");
-        }
 
+        
+        //Manejo de span en campo nombre
         var spanvalnombre = document.getElementById("span-area-nombre");
         if (numeroInput.value.length < 1) {
-          
           spanvalnombre.style.display = "inline";
           spanvalnombre.style.color = "red";
           spanvalnombre.textContent = "Debe ingresar su nombre";
-        }else{
+        } else {
           spanvalnombre.style.display = "none";
         }
 
-        var spanradios = document.getElementById('span-radios-check')
+        //manejo de span en radios
+        var spanradios = document.getElementById("span-radios-check");
         if (radios.length < 1) {
           //span-radios-check
           spanradios.style.display = "inline";
           spanradios.style.color = "red";
           spanradios.textContent = "Debe seleccionar una jornada";
-          console.log("no seleccionaron nada we");          
-        }else{
+          console.log("no seleccionaron nada we");
+        } else {
           spanradios.style.display = "none";
-          console.log('Valor de radio: ',radios[0].value);
-          alert('valor del radio seleccionado: '+radios[0].value)
+          console.log("Valor de radio: ", radios[0].value);
+          //alert("valor del radio seleccionado: " + radios[0].value);
         }
-        //console.log('enviado!!');
-        //event.preventDefault
+
+        if (typeof noverifStr == "undefined"&&radios.length > 0&&numeroInput.value.length > 0) {
+          alert('Todo correcto!!')
+          alert("Enviado!!");
+        }else{
+          alert('Llena los campos!!')
+        }
       }
 
+      //devuelve true o false dependiendo si hay algo escrito o no
       function verificarTextArea() {
         var area = document.getElementById("campo-area");
         var value = area.value;
