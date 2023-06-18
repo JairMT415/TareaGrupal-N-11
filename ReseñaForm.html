@@ -88,6 +88,16 @@
           placeholder="Juan Jose Campos"
         />
         <span id="span-area-nombre" style="display: none"></span>
+        <h4>Sucursal</h4>
+        <br>
+        <select name="select-sucursal">
+          <option disabled selected>Seleccione</option>
+          <option>Mapasingue</option>
+          <option>Samborondon</option>
+        </select>
+        <span id="span-selected" style="display: none"></span>
+        <br>
+        <br>
         <h4>Reseña</h4>
         <textarea
           class="input-reseña"
@@ -174,6 +184,14 @@
         return radios;
       }
 
+      //devuelve el valor del selected
+      function checkSelected(){
+        var select = document.querySelector('select[name="select-sucursal"]')
+        var selected = select.options[select.selectedIndex].value
+        console.log(selected);
+        return selected
+      }
+
       //evento para enviar formulario
       function enviar(event) {
         event.preventDefault();
@@ -212,6 +230,17 @@
           spanradios.style.display = "none";
           console.log("Valor de radio: ", radios[0].value);
           //alert("valor del radio seleccionado: " + radios[0].value);
+        }
+        
+        var itemselected = checkSelected()
+        //manejo validacion de span seleccion
+        var spanselect = document.getElementById("span-selected")
+        if(itemselected=='Seleccione'){
+          spanselect.style.display = 'inline'
+          spanselect.style.color = 'red'
+          spanselect.textContent = 'Seleccione una sucursal!'
+        }else{
+          spanselect.style.display = 'none'
         }
 
         if (typeof noverifStr == "undefined"&&radios.length > 0&&numeroInput.value.length > 0) {
