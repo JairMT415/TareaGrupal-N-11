@@ -116,6 +116,18 @@
           max="5"
           id="customRange2"
         />
+        <h4>¿Le gusto la atencion?</h4>
+        <label>
+          SI
+          <input type="radio" name="atencion" id="radio-atencion" value="1">
+        </label>
+        <label>
+          NO
+          <input type="radio" name="atencion" id="radio-atencion" value="2">
+        </label>
+        <span id="span-radios-check-atencion" style="display: none"></span>
+        <br>
+        <br>
         <h4>En Que Jornada asistio??</h4>
         <label>
           <input type="radio" name="jornada" value="1" />
@@ -192,6 +204,12 @@
         return selected
       }
 
+      //devuelve array de radios atencion checked
+      function checkAtencion(){
+        var radios = document.querySelectorAll('input[name="atencion"]:checked')
+        return radios
+      }
+
       //evento para enviar formulario
       function enviar(event) {
         event.preventDefault();
@@ -206,7 +224,6 @@
         } else {
           span.style.display = "none";
         }
-
         
         //Manejo de span en campo nombre
         var spanvalnombre = document.getElementById("span-area-nombre");
@@ -232,8 +249,8 @@
           //alert("valor del radio seleccionado: " + radios[0].value);
         }
         
-        var itemselected = checkSelected()
         //manejo validacion de span seleccion
+        var itemselected = checkSelected()
         var spanselect = document.getElementById("span-selected")
         if(itemselected=='Seleccione'){
           spanselect.style.display = 'inline'
@@ -242,6 +259,19 @@
         }else{
           spanselect.style.display = 'none'
         }
+
+        //manejo radios atencion
+        var radiosatencion = checkAtencion()
+        var spanRadioAtencion = document.getElementById('span-radios-check-atencion')
+        if(radiosatencion.length<1){
+          spanRadioAtencion.style.display = 'inline'
+          spanRadioAtencion.style.color = 'red'
+          spanRadioAtencion.textContent = 'Selecciona la atencion!'
+        }else{
+          spanRadioAtencion.style.display = 'none'
+        }
+
+
 
         if (typeof noverifStr == "undefined"&&radios.length > 0&&numeroInput.value.length > 0) {
           alert('Todo correcto!!')
