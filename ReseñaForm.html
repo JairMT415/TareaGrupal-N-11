@@ -57,8 +57,6 @@
         margin-top: 25px;
         margin-bottom: 25px;
       }
-
-      
     </style>
     <!-- <script type="text/javascript">
       function verificarCampos() {
@@ -163,19 +161,20 @@
         />
         <h4>En Que Jornada asistio??</h4>
         <label>
-          <input type="radio" name="jornada" value="1">
+          <input type="radio" name="jornada" value="1" />
           Desayuno
         </label>
-        <br>
+        <br />
         <label>
-          <input type="radio" name="jornada" value="2">
+          <input type="radio" name="jornada" value="2" />
           Almuerzo
         </label>
-        <br>
+        <br />
         <label>
-          <input type="radio" name="jornada" value="3">
+          <input type="radio" name="jornada" value="3" />
           Merienda
-        </label>      
+        </label>
+        <span id="span-radios-check" style="display: none"></span>
         <button id="btn-submit">Enviar</button>
       </form>
     </div>
@@ -186,8 +185,7 @@
     </footer>
     <script>
       var numeroInput = document.getElementById("reseña-input");
-      
-      
+
       numeroInput.addEventListener("input", function () {
         var inputValue = this.value;
         var texto = "";
@@ -228,29 +226,51 @@
       //   var submitbtn = document.querySelector("#btn-submit");
       //   submitbtn.addEventListener("submit", enviar());
       // }
-
-      
+      function checkRadios() {
+        var radios = document.querySelectorAll('input[name="jornada"]:checked');
+        console.log(radios);
+        return radios;
+      }
 
       function enviar(event) {
         event.preventDefault();
         var noverifStr = verificarCampos();
+        var radios = checkRadios();
 
+        var span = document.getElementById("span-area-vacia");
         if (typeof noverifStr == "string") {
-          var span = document.getElementById("span-area-vacia");
           span.style.display = "inline";
           span.style.color = "red";
           span.textContent = "Debe llenar el campo con una opinion!!";
+        }else{
+          span.style.display = "none";
         }
         if (typeof noverifStr == "undefined") {
           alert("Enviado!!");
         }
 
-        if(numeroInput.value.length<1){
-        var spanvalnombre = document.getElementById("span-area-nombre")
-        spanvalnombre.style.display = 'inline'
-        spanvalnombre.style.color='red'
-        spanvalnombre.textContent ='Debe ingresar su nombre'
-      }
+        var spanvalnombre = document.getElementById("span-area-nombre");
+        if (numeroInput.value.length < 1) {
+          
+          spanvalnombre.style.display = "inline";
+          spanvalnombre.style.color = "red";
+          spanvalnombre.textContent = "Debe ingresar su nombre";
+        }else{
+          spanvalnombre.style.display = "none";
+        }
+
+        var spanradios = document.getElementById('span-radios-check')
+        if (radios.length < 1) {
+          //span-radios-check
+          spanradios.style.display = "inline";
+          spanradios.style.color = "red";
+          spanradios.textContent = "Debe seleccionar una jornada";
+          console.log("no seleccionaron nada we");          
+        }else{
+          spanradios.style.display = "none";
+          console.log('Valor de radio: ',radios[0].value);
+          alert('valor del radio seleccionado: '+radios[0].value)
+        }
         //console.log('enviado!!');
         //event.preventDefault
       }
