@@ -1,4 +1,4 @@
-to<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8">
@@ -62,6 +62,9 @@ to<!DOCTYPE html>
         height: 185px;
         padding: 20px 5px;
       }
+      #contenido{
+        color: rgb(255, 255, 255);
+      }
     </style>
   </head>
 
@@ -70,7 +73,7 @@ to<!DOCTYPE html>
         <div id="banner">
             <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
             <h2 class="titulo">Restaurante y Comida a Domicilio</h2>
-            <button id="btn" style="text-decoration: none;">Accede</button>
+            <button id="btn" style="text-decoration: none;">Registrarse</button>
         </div>
         </header>
 
@@ -107,12 +110,12 @@ to<!DOCTYPE html>
   
       <footer>
         <h3>Dirección de contacto</h3>
-        <h3>Derechos reservados 2023 - Proyecto - Grupo #11</h3>
+        <h3>Derechos reservados 2023 - Tarea 2 - Grupo #11</h3>
       </footer>
 
       <script>
         document.getElementById('btn').addEventListener('click', function() {
-    window.location.href = 'Login_Formulario.html';
+    window.location.href = 'Registro_Formulario.html';
   });
         // limpiar las clases de todos los enlaces
         var enlaces = document.querySelectorAll("#item img");// retorna un arreglo con todos los elementos
