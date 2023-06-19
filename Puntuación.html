@@ -4,69 +4,93 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="author" content="">
+      <meta name="Ronny Quijije" content="">
       <title>Foodie place</title>
       <link rel="stylesheet" href="CSS/Estilos.css">
     <style>
-      .form-container {
-        flex-basis: 100%;
-        max-width: 500px;
-        margin: 0 auto;
-        background-color: #da9412;
-        padding: 20px;
+      body{
+    font-size: 12px;
+    font-family: verdana;
+}
+
+#contenedorPrincipal{
+    background: #ccccff;
+    width: 80%;
+    margin: 0 auto; /*para centrar un contenedor*/
+    
+}
+
+#encabezado{
+    text-align: center;
+    background: #99ccff
+}
+
+header h1{
+    font-size: 40px;
+    color:#3333ff;
+    display: inline;  
+}
+
+.text-center{
+    text-align: center;
+}
+#contenedorContenido{
+    color:#333333;
+}
+
+.formularios{
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
+    background: whitesmoke;
+    max-width: max-content;
+    margin: auto; /*para centrar*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.formularios div{
+    padding: 5px;
+}
+.formularios div:nth-child(2n){
+    background: #e7ebf0;
+}
+
+.mensajeError{
+color:rgb(255, 0, 0);
+font-size: 9px;
+}
+
+.buttonContainer {
+    display: inline-flex;
+    margin-left: 60px;
+   
+
+    }
+
+    .btnPrimary{
         border-radius: 5px;
-      }
-      .form-group {
-        margin-bottom: 20px;
-      }
-      .form-group input[type="radio"] {
-        display: none;
-      }
-      .form-group label.rating-label:hover,
-      .form-group label.rating-label:hover ~ label.rating-label {
-        background-color: #ffcc00;
-      }
-      .form-group input[type="radio"]:checked ~ label.rating-label {
-        background-color: #ffcc00;
-      }
-      .form-actions {
+        padding: 4px;
+        margin-top: 8px;
         text-align: center;
-      }
-      .form-actions button {
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: #fff;
-        border: none;
+        opacity: 0.97;
+        
+        }
+
+    .btn{
+        width: 160px; 
+        margin-right: 10px;
+    }
+    .btnPrimary{
         border-radius: 5px;
-        cursor: pointer;
-      }
-  /*Maquetación Inline-block Layout (display: inline, display: block, display:inline-block)*/
-  .form-group label.rating-label {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        background-color: #ccc;
-        border-radius: 50%;
+        padding: 4px;
+        margin-top: 8px;
         text-align: center;
-        line-height: 30px;
-        cursor: pointer;
-      }
-      .form-group label {
-        display: block;
-        margin-bottom: 10px;
-        font-weight: bold;
-      }
-  /*Maquetación Flexbox: (display:flex)*/
-  .container {
-        display: flex;
-        margin: 100px;
-      }
-  /*Maquetación Grid Layout: (display: grid)*/
-  .Voto{
-        display: grid;
-        background-color: #ccc;
-        text-align: center;
-      }
+        opacity: 0.97;
+        }
+
+#pie{
+    font-family: 'Courier New', Courier, monospace;
+}
     </style>
   </head>
 
@@ -80,7 +104,7 @@
 
     <nav>
       <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="Home.html">Home</a></li>
           <li><a href="Menu.html">Menú</a></li>
           <li><a href="Categoria.html">Categorias</a></li>
           <li><a href="Pedido.html">Pedidos</a></li>
@@ -89,50 +113,82 @@
     </nav>
 
     <div class="Voto">
-      <h1>Califica el Platillo</h1>
+      <h1 style="text-align: center;background-color: antiquewhite;">Califica el Platillo</h1>
     </div>
     
     <header>
-      <div class="container">
-        <div class="form-container">
-          <form>
-            <div class="form-group">
-              <h4>Nombre de los  platos:</h4>
-              <input type="text" id="nombre" name="nombre" required>
+      <div class="formularios">
+        <form id="formCalificacion" name="formCalificacion" onsubmit="return validarFormulario()">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" class="formItem" placeholder="Ingrese su nombre" />
             </div>
-
-            <div class="form-group">
-              <h4>Votos:</h4>
-              <div class="rating">
-                <input type="radio" id="rating1" name="calificacion" value="1">
-                <label class="rating-label" for="rating1">1</label>
-
-                <input type="radio" id="rating2" name="calificacion" value="2">
-                <label class="rating-label" for="rating2">2</label>
-
-                <input type="radio" id="rating3" name="calificacion" value="3">
-                <label class="rating-label" for="rating3">3</label>
-
-                <input type="radio" id="rating4" name="calificacion" value="4">
-                <label class="rating-label" for="rating4">4</label>
-
-                <input type="radio" id="rating5" name="calificacion" value="5">
-                <label class="rating-label" for="rating5">5</label>
-              </div>
+            <div>
+                <label for="plato">Plato:</label>
+                <input type="text" name="plato" id="plato" class="formItem" placeholder="Ingrese el nombre del plato" />
             </div>
-
-            <div class="form-actions">
-              <button type="submit">Enviar Voto</button>
+            <div>
+                <label for="calificacion" >Calificación:</label>
+                <select name="calificacion" id="calificacion" class="formItem">
+                    <option value="0">Seleccione..</option>
+                    <option value="1">1 estrella</option>
+                    <option value="2">2 estrellas</option>
+                    <option value="3">3 estrellas</option>
+                    <option value="4">4 estrellas</option>
+                    <option value="5">5 estrellas</option>
+                </select>
             </div>
-          </form>
-        </div>
-      </div>
-    </header>
+            <div>
+                <label for="comentarios">Comentarios:</label> <br>
+                <textarea name="comentarios" id="comentarios" rows="4" cols="50" class="formItem"></textarea>
+            </div>
+            <div class="buttonContainer">
+                <input type="submit" name="btnEnviar" class="btn btn-primary" value="Enviar">
+                <input type="reset" class="btn btn-primary" value="Cancelar">
+            </div>
+        </form>
+    </div>
+</div>
+            
+
+            
 
     <footer>
       <h3>Dirección de contacto</h3>
-      <h3>Derechos reservados 2023 - Proyecto Primer Parcial - Grupo #11</h3>
+      <h3>Derechos reservados 2023 - Tarea 1 - Grupo #11</h3>
    </footer>
+   <script type="text/javascript">
+    function validarFormulario() {
+        var nombre = document.getElementById("nombre").value;
+        var plato = document.getElementById("plato").value;
+        var calificacion = document.getElementById("calificacion").value;
+        var comentarios = document.getElementById("comentarios").value;
+
+        if (nombre.trim() === "") {
+            alert("Por favor, ingrese su nombre.");
+            return false;
+        }
+
+        if (plato.trim() === "") {
+            alert("Por favor, ingrese el nombre del plato.");
+            return false;
+        }
+
+        if (calificacion === "0") {
+            alert("Por favor, seleccione una calificación.");
+            return false;
+        }
+
+        if (comentarios.trim() === "") {
+            alert("Por favor, ingrese sus comentarios.");
+            return false;
+        }
+
+         return true;
+         
+        
+    }
+</script>
 
   </body>
 </html>
