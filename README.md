@@ -2,7 +2,7 @@
 Tema del grupo
 -Restaurante y servicio a domicilio
 
-LINK GITHUB PAGES: *link*
+LINK GITHUB PAGES: [*link*](https://jairmonse.github.io/TareaGrupal-N-11/)
 
 Integrantes
 - BRYAN MIGUEL ALAY MIRANDA
