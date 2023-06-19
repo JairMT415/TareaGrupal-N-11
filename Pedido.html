@@ -212,9 +212,9 @@
       } else if (!letra.test(txtNombres.value)) { 
           resultado = false;
           mensaje("Nombre solo debe contener letras", txtNombres);
-      } else if (txtNombres.value.length > 20) {
+      } else if (txtNombres.value.length > 40) {
           resultado = false;
-          mensaje("Nombre maximo debe tener 20 caracteres", txtNombres);
+          mensaje("Nombre maximo debe tener 40 caracteres", txtNombres);
       }
 
       //validacion telefono
