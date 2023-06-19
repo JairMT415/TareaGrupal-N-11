@@ -233,9 +233,9 @@
       } else if (!direccionRegEx.test(txtDireccion.value)) {
           resultado = false;
           mensaje("La dirección debe contener solo letras y números", txtDireccion);
-      } else if (txtDireccion.value.length > 80) {
+      } else if (txtDireccion.value.length > 60) {
           resultado = false;
-          mensaje("Dirección máximo 80 caracteres", txtDireccion);
+          mensaje("Dirección máximo 60 caracteres", txtDireccion);
       }
 
 
@@ -247,9 +247,9 @@
       } else if (!referenciaReg.test(txtReferencia.value)) { 
           resultado = false;
           mensaje("La referencia de dirección debe contener letras y números", txtReferencia);
-      } else if (txtReferencia.value.length > 50) {
+      } else if (txtReferencia.value.length > 80) {
           resultado = false;
-          mensaje("La referencia de dirección no debe exceder los 50 caracteres", txtReferencia);
+          mensaje("La referencia de dirección no debe exceder los 80 caracteres", txtReferencia);
       }
 
       //validacion de Hora
