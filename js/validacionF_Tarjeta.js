@@ -1,4 +1,4 @@
-//var form = document.getElementById("formPedido");
+//var form = document.getElementById("formPedido");//Jair Monserrate 
 var form = document.querySelector("#formTarjeta"); // selecciona el primero que cumple con el selector
 form.addEventListener('submit', validarFormTarjeta);
 
@@ -14,7 +14,7 @@ function validarFormTarjeta(event) {
     var selectTipoTarjeta= document.getElementById("tipoTarjeta");
 
     // expresiones regulares (RegEx)
-    var tarjetareg = /^\d{16}$/; 
+    var tarjetareg = /^[1-9]{16}$/g;
     var Cvvreg = /^\d{3}$/;
     var correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
@@ -38,7 +38,7 @@ function validarFormTarjeta(event) {
         mensaje("Debe seleccionar un tipo de tarjeta", selectTipoTarjeta);
     }
 
-    / Validacion de fecha de vencimiento
+    // Validacion de fecha de vencimiento
     var fechaVenc = new Date(txtFechaVenc.value);
     var anioVenc= fechaVenc.getFullYear();
     var anioActual = new Date().getFullYear();
@@ -46,7 +46,7 @@ function validarFormTarjeta(event) {
     if (txtFechaVenc.value === "") {
         resultado = false;
         mensaje("Fecha es requerida", txtFechaVenc);
-    }else if (anioVenc < anioActual) {
+    }else if (anioVenc <= anioActual) {
         resultado = false;
         mensaje("La tarjeta está vencida", txtFechaVenc);
     }
